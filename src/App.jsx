@@ -1,0 +1,50 @@
+
+import { Route, Routes } from 'react-router-dom'
+import './App.css'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import ResumeGenerate from './pages/ResumeGenerate'
+import Home from './pages/Home'
+import ResumeDetails from './pages/ResumeDetails'
+import AllResume from './pages/AllResume'
+import AllDownloads from './pages/AllDownloads'
+import SingleResume from './pages/SingleResume'
+import PNF from './pages/PNF'
+import { Slide, ToastContainer } from 'react-toastify'
+
+
+function App() {
+
+
+  return (
+   <>
+   <Header/>
+   <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/resume' element={<ResumeGenerate/>}/>
+        <Route path='/resume-details' element={<ResumeDetails/>}/>
+        <Route path='/all-resumes' element={<AllResume/>}/>
+        <Route path='/all-downloads' element={<AllDownloads/>}/>
+        <Route path='/resumes/:id' element={<SingleResume/>}/>
+        <Route path='/*' element={<PNF/>}/>
+   </Routes>
+
+   <Footer/>
+   <ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+transition={Slide}
+/>
+   </>
+  )
+}
+
+export default App
